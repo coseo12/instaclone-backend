@@ -2,8 +2,11 @@ import { ApolloServer, gql } from 'apollo-server';
 
 const typeDefs = gql`
   type Movie {
+    id: Int
     title: String
     year: Int
+    createdAt: DateTime
+    updatedAt: DateTime
   }
   type Query {
     movies: [Movie]
@@ -17,8 +20,8 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
-    movies: () => [{ title: 'Hello', year: 2021 }],
-    movie: () => ({ title: 'Hello', year: 2021 }),
+    movies: () => [{ id: 1, title: 'Hello', year: 2021 }],
+    movie: () => ({ id: 1, title: 'Hello', year: 2021 }),
   },
   Mutation: {
     createMovie: (_, { title }) => {

@@ -1,8 +1,8 @@
+import client from '../client';
+
 export default {
   Query: {
-    seeProfile: () => {
-      console.log('query');
-      return null;
-    },
+    seeProfile: (_, { username }) =>
+      client.user.findUnique({ where: { username } }),
   },
 };

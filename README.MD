@@ -2,6 +2,11 @@
 
 Instaclone Backend.
 
+## Common:
+
+- [x] Authorization
+- [x] Protecting Resolvers
+
 ## User:
 
 - [x] Create Account

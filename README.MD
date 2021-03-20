@@ -10,6 +10,7 @@ Express + Apollo Server + Prisma
 - [x] Protecting Resolvers
 - [x] Apollo File Upload Setup
 - [x] Ejecting from Apollo Server
+- [x] Static Images Endpoint
 - [ ] AWS S3 Setup
 
 ## User:
@@ -18,7 +19,7 @@ Express + Apollo Server + Prisma
 - [x] See Profile
 - [x] Login
 - [x] Edit Profile
-- [ ] Change Avatar (Image Upload)
+- [x] Change Avatar (Image Upload)
 - [ ] Follow User
 - [ ] Unfollow User
 - [ ] Search Users

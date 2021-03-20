@@ -8,13 +8,16 @@ const editProfileFn = async (
   { firstName, lastName, username, email, password: newPassword, bio, avatar },
   { loggedInUser }
 ) => {
+  let avatarUrl = null;
   if (avatar) {
     const { filename, createReadStream } = await avatar;
+    const newFileName = `${loggedInUser.id}-${Date.now()}-${filename}`;
     const readStream = createReadStream();
     const writeStream = createWriteStream(
-      `${process.cwd()}/uploads/${filename}`
+      `${process.cwd()}/uploads/${newFileName}`
     );
     readStream.pipe(writeStream);
+    avatarUrl = `http://localhost:4000/images/${newFileName}`;
   }
 
   let uglyPassword = null;
@@ -32,6 +35,7 @@ const editProfileFn = async (
       username,
       email,
       bio,
+      ...(avatarUrl && { avatar: avatarUrl }),
       ...(uglyPassword && { password: uglyPassword }),
     },
   });

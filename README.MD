@@ -2,14 +2,14 @@
 
 Instaclone Backend.
 
-Apollo Server + Prisma
+Express + Apollo Server + Prisma
 
 ## Common:
 
 - [x] Authorization
 - [x] Protecting Resolvers
 - [x] Apollo File Upload Setup
-- [ ] Ejecting from Apollo Server
+- [x] Ejecting from Apollo Server
 - [ ] AWS S3 Setup
 
 ## User:

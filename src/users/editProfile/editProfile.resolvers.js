@@ -1,12 +1,20 @@
 import client from '../../client';
 import bcrypt from 'bcrypt';
+import { createWriteStream } from 'fs';
 import { protectedResolver } from '../users.utils';
+
+console.log(process.cwd());
 
 const editProfileFn = async (
   _,
-  { firstName, lastName, username, email, password: newPassword },
+  { firstName, lastName, username, email, password: newPassword, bio, avatar },
   { loggedInUser }
 ) => {
+  const { filename, createReadStream } = await avatar;
+  const readStream = createReadStream();
+  const writeStream = createWriteStream(`${process.cwd()}/uploads/${filename}`);
+  readStream.pipe(writeStream);
+
   let uglyPassword = null;
   if (newPassword) {
     uglyPassword = await bcrypt.hash(newPassword, 10);
@@ -21,6 +29,7 @@ const editProfileFn = async (
       lastName,
       username,
       email,
+      bio,
       ...(uglyPassword && { password: uglyPassword }),
     },
   });

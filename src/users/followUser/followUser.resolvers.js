@@ -2,7 +2,10 @@ import client from '../../client';
 import { protectedResolver } from '../users.utils';
 
 const followUserFn = async (_, { username }, { loggedInUser }) => {
-  const ok = await client.user.findUnique({ where: { username } });
+  const ok = await client.user.findUnique({
+    where: { username },
+    select: { id: true },
+  });
   if (!ok) {
     return {
       ok: false,

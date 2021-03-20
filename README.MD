@@ -22,7 +22,8 @@ Express + Apollo Server + Prisma
 - [x] Change Avatar (Image Upload)
 - [x] Follow User
 - [x] Unfollow User
-- [ ] See Followers and See Following / Pagination
+- [x] See Followers w/ offset based Pagination
+- [x] See Following w/ cursor based Pagination
 - [ ] Computed Fields
 - [ ] Search Users
 
@@ -41,3 +42,4 @@ Express + Apollo Server + Prisma
 
 - DATABASE_URL
 - PORT
+- SECRET_KEY

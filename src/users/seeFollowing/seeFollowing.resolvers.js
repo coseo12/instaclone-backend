@@ -22,7 +22,7 @@ export default {
         });
 
       const totalFollowing = await client.user.count({
-        where: { following: { some: { username } } },
+        where: { followers: { some: { username } } },
       });
 
       return {

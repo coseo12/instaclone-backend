@@ -18,7 +18,7 @@ export default {
         .followers({ skip: (page - 1) * 5, take: 5 });
 
       const totalFollowers = await client.user.count({
-        where: { followers: { some: { username } } },
+        where: { following: { some: { username } } },
       });
 
       return {

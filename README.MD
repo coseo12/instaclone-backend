@@ -25,7 +25,7 @@ Express + Apollo Server + Prisma
 - [x] See Followers w/ offset based Pagination
 - [x] See Following w/ cursor based Pagination
 - [x] Computed Fields
-- [ ] Search Users
+- [x] Search Users w/ offset based Pagination
 
 ## Photos:
 

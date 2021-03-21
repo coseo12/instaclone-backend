@@ -1,7 +1,6 @@
-import client from '../../client';
 import { protectedResolver } from '../users.utils';
 
-const followUserFn = async (_, { username }, { loggedInUser }) => {
+const unfollowUserFn = async (_, { username }, { loggedInUser, client }) => {
   const ok = await client.user.findUnique({
     where: { username },
     select: { id: true },
@@ -9,19 +8,22 @@ const followUserFn = async (_, { username }, { loggedInUser }) => {
   if (!ok) {
     return {
       ok: false,
-      error: `That user does not exist.`,
+      error: `Can't not unfollow user`,
     };
   }
   await client.user.update({
-    where: { id: loggedInUser.id },
+    where: {
+      id: loggedInUser.id,
+    },
     data: {
       following: {
-        connect: {
+        disconnect: {
           username,
         },
       },
     },
   });
+
   return {
     ok: true,
   };
@@ -29,6 +31,6 @@ const followUserFn = async (_, { username }, { loggedInUser }) => {
 
 export default {
   Mutation: {
-    followUser: protectedResolver(followUserFn),
+    unfollowUser: protectedResolver(unfollowUserFn),
   },
 };

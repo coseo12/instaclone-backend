@@ -1,12 +1,11 @@
-import client from '../../client';
-import bcrypt from 'bcrypt';
+import * as bcrypt from 'bcrypt';
 import { createWriteStream } from 'fs';
 import { protectedResolver } from '../users.utils';
 
 const editProfileFn = async (
   _,
   { firstName, lastName, username, email, password: newPassword, bio, avatar },
-  { loggedInUser }
+  { loggedInUser, client }
 ) => {
   let avatarUrl = null;
   if (avatar) {

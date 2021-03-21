@@ -6,6 +6,7 @@ Express + Apollo Server + Prisma
 
 ## Common:
 
+- [x] Typescript Setup
 - [x] Authorization
 - [x] Protecting Resolvers
 - [x] Apollo File Upload Setup

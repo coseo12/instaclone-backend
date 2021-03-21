@@ -2,7 +2,7 @@
 
 Instaclone Backend.
 
-Express + Apollo Server + Prisma
+Express + Apollo Server + Prisma with Typescript
 
 ## Common:
 

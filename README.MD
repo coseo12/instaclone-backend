@@ -31,7 +31,7 @@ Express + Apollo Server + Prisma with Typescript
 ## Photos:
 
 - [x] Upload Photo (Parse #)
-- [ ] See Photo
+- [x] See Photo
 - [ ] See Hashtags
 - [ ] Search Photos
 - [ ] Edit Photo

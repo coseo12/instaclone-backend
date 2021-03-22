@@ -1,4 +1,6 @@
-export default {
+import { Resolvers } from '../types';
+
+const resolvers: Resolvers = {
   User: {
     totalFollowing: async ({ id }, _, { client }) =>
       client.user.count({ where: { followers: { some: { id } } } }),
@@ -26,3 +28,5 @@ export default {
     },
   },
 };
+
+export default resolvers;

@@ -26,6 +26,10 @@ const resolvers: Resolvers = {
       });
       return exists !== 0;
     },
+    photos: async ({ id }, { page }, { client }) =>
+      client.user
+        .findUnique({ where: { id } })
+        .photos({ skip: (page - 1) * 5, take: 5 }),
   },
 };
 

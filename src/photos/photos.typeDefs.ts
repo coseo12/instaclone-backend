@@ -4,7 +4,7 @@ export default gql`
   type Photo {
     id: Int!
     user: User!
-    file: Int!
+    file: String!
     caption: String
     hashtags: [Hashtag]
     createdAt: String!

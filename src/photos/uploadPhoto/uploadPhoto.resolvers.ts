@@ -1,38 +1,32 @@
 import { Resolvers } from '../../types';
 import { protectedResolver } from '../../users/users.utils';
+import { processHashtags } from '../photos.utils';
 
 const resolvers: Resolvers = {
   Mutation: {
     uploadPhoto: protectedResolver(
       async (_, { file, caption }, { loggedInUser, client }) => {
+        let hashtagObj = [];
         if (caption) {
-          let hashtagObj = null;
-          const hashtags = caption.match(/#[\w]+/g);
-          hashtagObj = hashtags.map(hashtag => ({
-            where: { hashtag },
-            create: { hashtag },
-          }));
-          return client.photo.create({
-            data: {
-              file,
-              caption,
-              user: {
-                connect: {
-                  id: loggedInUser.id,
-                },
-              },
-              ...(hashtagObj.length > 0 && {
-                hashtags: {
-                  connectOrCreate: hashtagObj,
-                },
-              }),
-            },
-          });
-          // parse caption
-          // get or create Hashtags
+          hashtagObj = processHashtags(caption);
         }
-        // save the photo with parsed hashtags
-        // ass the photo to the hashtags
+
+        return client.photo.create({
+          data: {
+            file,
+            caption,
+            user: {
+              connect: {
+                id: loggedInUser.id,
+              },
+            },
+            ...(hashtagObj.length > 0 && {
+              hashtags: {
+                connectOrCreate: hashtagObj,
+              },
+            }),
+          },
+        });
       }
     ),
   },

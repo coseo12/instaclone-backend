@@ -48,7 +48,7 @@ Express + Apollo Server + Prisma with Typescript
 
 ## Refactor
 
-- [ ] Mutation Responses
+- [x] Mutation Responses
 
 ## Extras
 

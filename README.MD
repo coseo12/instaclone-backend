@@ -36,7 +36,7 @@ Express + Apollo Server + Prisma with Typescript
 - [x] Edit Photo
 - [x] Like / Unlike Photo
 - [x] See Photo Likes
-- [ ] See Photo Comments
+- [x] See Photo Comments w/ cursor based Pagination
 - [x] See Feed
 - [ ] Is Mine (Delete Photo)
 

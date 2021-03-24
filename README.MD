@@ -12,7 +12,6 @@ Express + Apollo Server + Prisma with Typescript
 - [x] Apollo File Upload Setup
 - [x] Ejecting from Apollo Server
 - [x] Static Images Endpoint
-- [ ] AWS S3 Setup
 
 ## User:
 
@@ -37,13 +36,19 @@ Express + Apollo Server + Prisma with Typescript
 - [x] Edit Photo
 - [x] Like / Unlike Photo
 - [x] See Photo Likes
+- [ ] See Photo Comments
 - [x] See Feed
+- [ ] Is Mine (Delete Photo)
 
 ## Comments
 
-- [ ] Comment on Photo
+- [x] Comment on Photo
 - [ ] Edit Comment
-- [ ] Delete Comment
+- [ ] Delete Comment (Is Mine)
+
+## Extras
+
+- [ ] AWS S3 Image Upload
 
 ## ENV SETTING
 

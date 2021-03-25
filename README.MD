@@ -46,6 +46,13 @@ Express + Apollo Server + Prisma with Typescript
 - [x] Delete Comment
 - [x] Edit Comment
 
+## DMs
+
+- [ ] Create Room
+- [ ] Get Room
+- [ ] Send Message
+- [ ] Realtime Messages
+
 ## Refactor
 
 - [x] Mutation Responses

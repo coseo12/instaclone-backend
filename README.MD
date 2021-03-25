@@ -52,10 +52,12 @@ Express + Apollo Server + Prisma with Typescript
 
 ## Extras
 
-- [ ] AWS S3 Image Upload
+- [x] AWS S3 Image Upload
 
 ## ENV SETTING
 
 - DATABASE_URL
 - PORT
 - SECRET_KEY
+- AWS_ACCESS_KEY
+- AWS_SECRET_KEY

@@ -2,6 +2,7 @@ require('dotenv').config();
 import * as express from 'express';
 import * as logger from 'morgan';
 import { ApolloServer } from 'apollo-server-express';
+import { graphqlUploadExpress } from 'graphql-upload';
 import { typeDefs, resolvers } from './schema';
 import { getUser } from './users/users.utils';
 import client from './client';
@@ -11,6 +12,7 @@ const PORT = process.env.PORT;
 const apollo = new ApolloServer({
   resolvers,
   typeDefs,
+  uploads: false,
   context: async ({ req }) => {
     return {
       loggedInUser: await getUser(req.headers.authorization),
@@ -20,6 +22,7 @@ const apollo = new ApolloServer({
 });
 
 const app = express();
+app.use(graphqlUploadExpress());
 app.use(logger('tiny'));
 apollo.applyMiddleware({ app });
 app.use('/images', express.static('uploads'));

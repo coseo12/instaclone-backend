@@ -48,9 +48,9 @@ Express + Apollo Server + Prisma with Typescript
 
 ## DMs
 
-- [ ] Create Room
-- [ ] Get Room
-- [ ] Send Message
+- [x] See Rooms
+- [ ] Send Message (Create Room)
+- [ ] see Room
 - [ ] Realtime Messages
 
 ## Refactor

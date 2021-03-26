@@ -3,7 +3,7 @@ import { protectedResolver } from '../../users/users.utils';
 
 const resolvers: Resolvers = {
   Query: {
-    seeRooms: protectedResolver(async (_, { id }, { loggedInUser, client }) =>
+    seeRoom: protectedResolver(async (_, { id }, { loggedInUser, client }) =>
       client.room.findFirst({
         where: {
           id,

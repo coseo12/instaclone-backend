@@ -12,6 +12,7 @@ Express + Apollo Server + Prisma with Typescript
 - [x] Apollo File Upload Setup
 - [x] Ejecting from Apollo Server
 - [x] Static Images Endpoint
+- [ ] Subscriptions Setup
 
 ## User:
 
@@ -49,7 +50,7 @@ Express + Apollo Server + Prisma with Typescript
 ## DMs
 
 - [x] See Rooms
-- [ ] Send Message (Create Room)
+- [x] Send Message (Create Room)
 - [ ] see Room
 - [ ] Realtime Messages
 

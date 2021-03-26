@@ -2,7 +2,7 @@ import { Resolvers } from '../../types';
 import { protectedResolver } from '../../users/users.utils';
 
 const resolvers: Resolvers = {
-  Muataion: {
+  Mutation: {
     readMessage: protectedResolver(
       async (_, { id }, { loggedInUser, client }) => {
         const message = await client.message.findFirst({

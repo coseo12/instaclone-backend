@@ -12,7 +12,7 @@ Express + Apollo Server + Prisma with Typescript
 - [x] Apollo File Upload Setup
 - [x] Ejecting from Apollo Server
 - [x] Static Images Endpoint
-- [ ] Subscriptions Setup
+- [x] Subscriptions Setup
 
 ## User:
 

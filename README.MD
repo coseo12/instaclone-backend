@@ -54,7 +54,7 @@ Express + Apollo Server + Prisma with Typescript
 - [x] See Room
 - [x] Computed Fields
 - [x] See (Read) Message
-- [ ] Realtime Messages
+- [x] Realtime Messages (Add Filtering)
 
 ## Refactor
 

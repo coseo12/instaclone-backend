@@ -17,6 +17,7 @@ Express + Apollo Server + Prisma with Typescript
 ## User:
 
 - [x] Create Account
+- [x] My Profile
 - [x] See Profile
 - [x] Login
 - [x] Edit Profile

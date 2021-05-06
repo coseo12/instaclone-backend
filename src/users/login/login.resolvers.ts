@@ -21,9 +21,7 @@ const resolvers: Resolvers = {
         };
       }
 
-      const token = await jwt.sign({ id: user.id }, process.env.SECRET_KEY, {
-        expiresIn: '1d',
-      });
+      const token = await jwt.sign({ id: user.id }, process.env.SECRET_KEY);
 
       return {
         ok: true,

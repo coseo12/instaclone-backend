@@ -6,7 +6,8 @@ export default gql`
     user: User!
     file: String!
     caption: String
-    comments: Int!
+    commentNumber: Int!
+    comments: [Comment]
     hashtags: [Hashtag]
     likes: Int!
     isMine: Boolean!
